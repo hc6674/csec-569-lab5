@@ -1,0 +1,11 @@
+conf t
+dot11 ssid Starbucks_Wifi
+authentication open
+guest-mode
+exit
+int dot11radio 0
+ssid Starbucks_Wifi
+encryption mode wep mandatory
+encryption key 1 size 40bit 0 1234567890 transmit-key
+no shut
+end

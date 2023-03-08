@@ -1,0 +1,18 @@
+conf t
+int dot11Radio 0
+shut
+no encryption mode wep mandatory
+no encryption key 1 size 40bit 0 1234567890 transmit-key
+encryption mode ciphers aes-ccm
+exit
+dot11 ssid MySecureWiFi
+authentication open
+authentication key-management wpa version 2
+wpa-psk ascii 0 MySecretPassphrase123
+guest-mode
+exit
+int dot11Radio 0
+no ssid Starbucks_Wifi
+ssid MySecureWiFi
+no shut
+end
